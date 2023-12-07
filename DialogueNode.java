@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class DialogueNode {
     private String dialogue;
     private HashMap<String, DialogueNode> responses;
@@ -15,4 +17,11 @@ public class DialogueNode {
     public DialogueNode getResponse(String responseName) {
         return responses.get(responseName);
     }
+    public HashMap<String, DialogueNode> getAllResponses() {
+        return responses;
+     }
+     
+    public void addResponse(String responseName, DialogueNode nextNode) {
+      responses.put(responseName, nextNode);
+  }
  }
