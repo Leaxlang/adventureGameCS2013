@@ -1,0 +1,8 @@
+nodeBakery1 = Hello, how can I help you?
+nodeBakery2 = I don't know much, but I heard it's in the forest.
+nodeBakery3 = NO! When you go you'll die! Like many villagers already have!
+nodeBakery4 = There have been some cases where the children in the village disappeared. We believe that was the demon too!
+nodeBakery5 = The demon hides in the shadow's. You can't see him until it's already too late. 
+nodeBakery6 = Do you want to buy some bread now?
+nodeBakery7 = Here you go! Have a nice day and good luck on your quest!
+nodeBakery8 = Then why are you in a bakery??
