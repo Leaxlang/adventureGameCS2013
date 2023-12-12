@@ -1,0 +1,2 @@
+Wise Wizard, This is the wise wizards who's apprentice you are., dialogueTreeWizard
+Bakery Lady, She is the woman behind the counter of the town bakery. ,dialogueTreeBakery

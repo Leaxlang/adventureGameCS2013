@@ -1,0 +1,11 @@
+nodeBakery1.addResponse("Can I have some bread?", nodeBakery7);
+nodeBakery1.addResponse("What can you tell me about the demon?", nodeBakery2);
+nodeBakery2.addResponse("Have you ever been there?", nodeBakery3);
+nodeBakery2.addResponse("Has the demon ever been to the village?", nodeBakery4);
+nodeBakery3.addResponse("What does the demon do?", nodeBakery5);
+nodeBakery3.addResponse("Thank you for your help!", nodeBakery6);
+nodeBakery4.addResponse("What does the demon do?", nodeBakery5);
+nodeBakery4.addResponse("Thank you for your help!", nodeBakery6);
+nodeBakery5.addResponse("Thank you for your help!", nodeBakery6);
+nodeBakery6.addResponse("Yes, please!",nodeBakery7);
+nodeBakery6.addResponse("No, I don't like bread.",nodeBakery8);

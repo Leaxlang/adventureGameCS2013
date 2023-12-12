@@ -8,6 +8,22 @@ public class Character {
         this.description = description;
         this.dialogueTree = dialogueTree;
     }
+    public Character(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+    public Character(){}
+
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setDesc(String description){
+        this.description = description;
+    }
+    public void setdialogueTree(DialogueTree dialogueTree){
+        this.dialogueTree = dialogueTree;
+    }
+
     public String getName() {
         return name;
     }
