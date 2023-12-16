@@ -1,5 +1,7 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,18 +16,20 @@ import javax.swing.tree.TreeNode;
 public class Game {
    private static final String VILLAGE = "Eldoria";
     private static HashMap<String, Character> characters;
+           HashMap<String, DialogueNode> dialogueMap = new HashMap<>();
+
     private static boolean talkedToBeggar = false;
     private static boolean gotBread = false; 
 
 
-    DialogueNode nodeBakery1 = new DialogueNode("Bakery Lady: Hello, how can I help you?");
-        DialogueNode nodeBakery2 = new DialogueNode("Bakery Lady: I don't know much, but I heard it's in the forest.");
-        DialogueNode nodeBakery3 = new DialogueNode("Bakery Lady: NO! When you go you'll die! Like many villagers already have!");
-        DialogueNode nodeBakery4 = new DialogueNode("Bakery Lady: There have been some cases where the children in the village disappeared. We believe that was the demon too!");
-        DialogueNode nodeBakery5 = new DialogueNode("Bakery Lady: The demon hides in the shadow's. You can't see him until it's already too late. ");
-        DialogueNode nodeBakery6 = new DialogueNode("Bakery Lady: Do you want to buy some bread now?");
-        DialogueNode nodeBakery7 = new DialogueNode("Bakery Lady: Here you go! Have a nice day and good luck on your quest!");
-        DialogueNode nodeBakery8 = new DialogueNode("Bakery Lady: Then why are you in a bakery??");
+    // static DialogueNode nodeBakery1 = new DialogueNode("Bakery Lady: Hello, how can I help you?");
+    //     DialogueNode nodeBakery2 = new DialogueNode("Bakery Lady: I don't know much, but I heard it's in the forest.");
+    //     DialogueNode nodeBakery3 = new DialogueNode("Bakery Lady: NO! When you go you'll die! Like many villagers already have!");
+    //     DialogueNode nodeBakery4 = new DialogueNode("Bakery Lady: There have been some cases where the children in the village disappeared. We believe that was the demon too!");
+    //     DialogueNode nodeBakery5 = new DialogueNode("Bakery Lady: The demon hides in the shadow's. You can't see him until it's already too late. ");
+    //     DialogueNode nodeBakery6 = new DialogueNode("Bakery Lady: Do you want to buy some bread now?");
+    //     DialogueNode nodeBakery7 = new DialogueNode("Bakery Lady: Here you go! Have a nice day and good luck on your quest!");
+    //     DialogueNode nodeBakery8 = new DialogueNode("Bakery Lady: Then why are you in a bakery??");
 
    public Game() {
     // HashMap<String, Character> characters = new HashMap<>();
@@ -47,6 +51,16 @@ public class Game {
    public void handlePlayerInteraction(Character character) {
     String playerResponse = "";
     DialogueNode currentNode = character.getNode();
+    // Get the current dialogue line
+// DialogueNode currentDialogue  = character.getDialogue();
+
+DialogueNode currentDialogue = character.getDialogue();
+// DialogueNode currentNode = dialogueMap.get(dialogueMap.get(currentDialogue));
+// DialogueNode currentNode = dialogueMap.get(currentDialogue);
+
+// // Get the current DialogueNode from the HashMap
+// DialogueNode currentNode = dialogueMap.get(dialogueMap.get(currentDialogue));
+
  
     // while (playerResponse.equals("")) {
         // Display the dialogue
@@ -73,7 +87,7 @@ public class Game {
         // Display the dialogue
         System.out.println(currentNode.getDialogue());
 
-        if(currentNode.equals(nodeBakery7)){
+        if(currentNode.equals(dialogueMap.get("bakeryNode7"))){
             gotBread = true;
             System.out.print("YOU GOT HTE BREAD!");
         }
@@ -88,6 +102,7 @@ public class Game {
 
         // Display the responses
         System.out.println("\n ------------ \n You can answer:");
+        
         for (Map.Entry<String, DialogueNode> entry : currentNode.getAllResponses().entrySet()) {
             System.out.println(" - [" + entry.getKey() + "]");
         }
@@ -170,46 +185,156 @@ public class Game {
         //     DialogueNode nextNode = nodes.get(nextNodeName);
         //     node.addResponse(response, nextNode);
         // }
-       
+
+// try {
+//    // Create a BufferedReader object from the File
+//    BufferedReader br = new BufferedReader(new FileReader("dialogue.txt"));
+//    String line = null;
+
+//    // Read file line by line
+//    while ((line = br.readLine()) != null) {
+//        // Split the line by :
+//        String[] parts = line.split(":");
+
+//        // First part is dialogue, second is DialogueNode
+//        String dialogue = parts[0].trim();
+//        String node = parts[1].trim();
+
+//        // Create a new DialogueNode and put dialogue, node in HashMap if they are not empty
+//        if (!dialogue.equals("") && !node.equals("")) {
+//            DialogueNode dialogueNode = new DialogueNode(node);
+//            game.dialogueMap.put(dialogue, dialogueNode);
+//        }
+//    }
+// } catch (Exception e) {
+//    e.printStackTrace();
+// }
+
+// try {
+//     // Create a BufferedReader object from the File
+//     BufferedReader br = new BufferedReader(new FileReader("Dialogue.txt"));
+//     String line = null;
+  
+//     // Read file line by line
+//     while ((line = br.readLine()) != null) {
+//         // Split the line by :
+//         String[] parts = line.split(";");
+  
+//         // First part is dialogue, second is DialogueNode
+//         String name = parts[0].trim();
+//          String dialogue = parts[1].trim();
+//         String[] responses = parts[2].split(";");
+  
+//         // Create a new DialogueNode and put dialogue, node in HashMap if they are not empty
+//         if (!dialogue.equals("") && !responses[0].equals("")) {
+//             DialogueNode dialogueNode = new DialogueNode(name,dialogue);
+//             // game.dialogueMap.put(name,dialogue, dialogueNode);
+//                         game.dialogueMap.put(name, dialogueNode);
+
+  
+//             // Connect the responses to the DialogueNode
+//             for (int i = 2; i < parts.length; i += 2) {
+//                 String response = parts[i].trim();
+//                 String nextNodeName = parts[i+1].trim();
+     
+//                 DialogueNode nextNode = game.dialogueMap.get(nextNodeName);
+//                 dialogueNode.addResponse(response, nextNode);
+                
+//             }
+//         }
+//     }
+//   } catch (Exception e) {
+//     e.printStackTrace();
+//   }
+  
+try {
+    BufferedReader br = new BufferedReader(new FileReader("Dialogue.txt"));
+    String line = null;
+ 
+    // First pass: Add all DialogueNodes to the dialogueMap
+    while ((line = br.readLine()) != null) {
+        String[] parts = line.split(";");
+ 
+        String name = parts[0].trim();
+        String dialogue = parts[1].trim();
+ 
+        DialogueNode dialogueNode = new DialogueNode(name, dialogue);
+        game.dialogueMap.put(name, dialogueNode);
+    }
+ 
+    // Second pass: Add responses to the DialogueNodes
+    br = new BufferedReader(new FileReader("Dialogue.txt"));
+    while ((line = br.readLine()) != null) {
+        String[] parts = line.split(";");
+ 
+        String name = parts[0].trim();
+        String dialogue = parts[1].trim();
+ 
+        DialogueNode dialogueNode = game.dialogueMap.get(name);
+ 
+        for (int i = 2; i < parts.length; i += 2) {
+            String response = parts[i].trim();
+            String nextNodeName = parts[i+1].trim();
+ 
+            DialogueNode nextNode = game.dialogueMap.get(nextNodeName);
+            dialogueNode.addResponse(response, nextNode);
+        }
+    }
+ } catch (Exception e) {
+    e.printStackTrace();
+ }
+ 
+
+  for (String key : game.dialogueMap.keySet()) {
+    System.out.println("Key: " + key);
+}
+
+for (DialogueNode value : game.dialogueMap.values()) {
+    System.out.println("Value: " + value);
+    System.out.println("Dialogue:" + value.getDialogue());
+    System.out.println("Responens: " + value.getAllResponses() + "\n");
+    // value.getNextNode();
+}
+
 
         
         // Initialize characters
         //WIZARD
-        //Create the dialogue nodes 
-        DialogueNode nodeWizard1 = new DialogueNode("\n Wizard: Good morning, the time has come for your next task! You will have to go to the village of +" + VILLAGE +". They are haunted by a demon. Your task is to defeat the demon and to figure out how to defeat him. What are you waiting for? Let's go!");
-        DialogueNode nodeWizard2 = new DialogueNode("Wizard: Good luck!");
-        //Connect the nodes
-        nodeWizard1.addResponse("Already on my way!", nodeWizard2);
+        // //Create the dialogue nodes 
+        // DialogueNode nodeWizard1 = new DialogueNode("\n Wizard: Good morning, the time has come for your next task! You will have to go to the village of +" + VILLAGE +". They are haunted by a demon. Your task is to defeat the demon and to figure out how to defeat him. What are you waiting for? Let's go!");
+        // DialogueNode nodeWizard2 = new DialogueNode("Wizard: Good luck!");
+        // //Connect the nodes
+        // nodeWizard1.addResponse("Already on my way!", nodeWizard2);
 
         //BAKERY
         // Create the dialogue nodes
-        DialogueNode nodeBakery1 = new DialogueNode("Bakery Lady: Hello, how can I help you?");
-        DialogueNode nodeBakery2 = new DialogueNode("Bakery Lady: I don't know much, but I heard it's in the forest.");
-        DialogueNode nodeBakery3 = new DialogueNode("Bakery Lady: NO! When you go you'll die! Like many villagers already have!");
-        DialogueNode nodeBakery4 = new DialogueNode("Bakery Lady: There have been some cases where the children in the village disappeared. We believe that was the demon too!");
-        DialogueNode nodeBakery5 = new DialogueNode("Bakery Lady: The demon hides in the shadow's. You can't see him until it's already too late. ");
-        DialogueNode nodeBakery6 = new DialogueNode("Bakery Lady: Do you want to buy some bread now?");
-        DialogueNode nodeBakery7 = new DialogueNode("Bakery Lady: Here you go! Have a nice day and good luck on your quest!");
-        DialogueNode nodeBakery8 = new DialogueNode("Bakery Lady: Then why are you in a bakery??");
+        // DialogueNode nodeBakery1 = new DialogueNode("Bakery Lady: Hello, how can I help you?");
+        // DialogueNode nodeBakery2 = new DialogueNode("Bakery Lady: I don't know much, but I heard it's in the forest.");
+        // DialogueNode nodeBakery3 = new DialogueNode("Bakery Lady: NO! When you go you'll die! Like many villagers already have!");
+        // DialogueNode nodeBakery4 = new DialogueNode("Bakery Lady: There have been some cases where the children in the village disappeared. We believe that was the demon too!");
+        // DialogueNode nodeBakery5 = new DialogueNode("Bakery Lady: The demon hides in the shadow's. You can't see him until it's already too late. ");
+        // DialogueNode nodeBakery6 = new DialogueNode("Bakery Lady: Do you want to buy some bread now?");
+        // DialogueNode nodeBakery7 = new DialogueNode("Bakery Lady: Here you go! Have a nice day and good luck on your quest!");
+        // DialogueNode nodeBakery8 = new DialogueNode("Bakery Lady: Then why are you in a bakery??");
 
         // Connect the nodes
-        nodeBakery1.addResponse("Can I have some bread?", nodeBakery7);
-        nodeBakery1.addResponse("What can you tell me about the demon?", nodeBakery2);
-        nodeBakery2.addResponse("Have you ever been there?", nodeBakery3);
-        nodeBakery2.addResponse("Has the demon ever been to the village?", nodeBakery4);
-        nodeBakery3.addResponse("What does the demon do?", nodeBakery5);
-        nodeBakery3.addResponse("Thank you for your help!", nodeBakery6);
-        nodeBakery4.addResponse("What does the demon do?", nodeBakery5);
-        nodeBakery4.addResponse("Thank you for your help!", nodeBakery6);
-        nodeBakery5.addResponse("Thank you for your help!", nodeBakery6);
-        nodeBakery6.addResponse("Yes, please!",nodeBakery7);
-        nodeBakery6.addResponse("No, I don't like bread.",nodeBakery8);
+        // nodeBakery1.addResponse("Can I have some bread?", nodeBakery7);
+        // nodeBakery1.addResponse("What can you tell me about the demon?", nodeBakery2);
+        // nodeBakery2.addResponse("Have you ever been there?", nodeBakery3);
+        // nodeBakery2.addResponse("Has the demon ever been to the village?", nodeBakery4);
+        // nodeBakery3.addResponse("What does the demon do?", nodeBakery5);
+        // nodeBakery3.addResponse("Thank you for your help!", nodeBakery6);
+        // nodeBakery4.addResponse("What does the demon do?", nodeBakery5);
+        // nodeBakery4.addResponse("Thank you for your help!", nodeBakery6);
+        // nodeBakery5.addResponse("Thank you for your help!", nodeBakery6);
+        // nodeBakery6.addResponse("Yes, please!",nodeBakery7);
+        // nodeBakery6.addResponse("No, I don't like bread.",nodeBakery8);
 
        
         
         // Create the dialogue tree
-        DialogueTree dialogueTreeBakery = new DialogueTree(nodeBakery1);
-        DialogueTree dialogueTreeWizard = new DialogueTree(nodeWizard1);
+        DialogueTree dialogueTreeBakery = new DialogueTree(game.dialogueMap.get("Bakery1"));
+        DialogueTree dialogueTreeWizard = new DialogueTree(game.dialogueMap.get("Wizard1"));
 
         // Create the characters
         try {
@@ -243,7 +368,7 @@ public class Game {
     characters.get("Bakery Lady").setdialogueTree(dialogueTreeBakery);
 
 
-        game.handlePlayerInteraction(characters.get("Wise Wizard"));
+        // game.handlePlayerInteraction(characters.get("Wise Wizard"));
 
         System.out.println("\n You've left the Tower, where do you want to go now? \n The [Tower] \n The [Village] \n The [Forest]");
 String playerResponse = System.console().readLine();
@@ -263,7 +388,8 @@ while (gameActive){
                playerResponse = System.console().readLine();
                switch (playerResponse) {
                   case "Bakery":
-                  handlePlayerInteraction(characters.get("Bakery Lady"));
+                  game.handlePlayerInteraction(characters.get("Bakery Lady"));
+                //   handlePlayerInteraction(characters.get("Bakery Lady"));
                       // Handle bakery interaction
                       break;
                   case "Out of the village":

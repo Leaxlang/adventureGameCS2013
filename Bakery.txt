@@ -1,6 +1,0 @@
-"Hello, how can I help you?",nodeBakery1
-"Can I have some bread?",Bakery7
-"What can you tell me about the demon?",Bakery2
-"Hello, how can I help you?",Bakery1
-"Can I have some bread?",Bakery7
-"What can you tell me about the demon?",Bakery2
