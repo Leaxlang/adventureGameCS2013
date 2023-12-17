@@ -1,2 +1,10 @@
 Wise Wizard, This is the wise wizards who's apprentice you are., dialogueTreeWizard
 Bakery Lady, She is the woman behind the counter of the town bakery. ,dialogueTreeBakery
+Village Guard, This guard stands at the entrance gate of the village and protects the people. , dialogueTreeGuard
+Tavern Lady, She is the owner of the local tavern 'Bannered Mare.' , dialogueTreeTavern
+Drunken Guy, He can't even walk straight anymore so drunk is he. , dialogueTreeDrunkenGuy
+Little Girl, A scared girl without her parents., dialogueTreeLittleGirl
+Old Women, She looks a little bit scary but also wise. , dialogueTreeOldWomen
+Help Wizard, When you come back to the Tower and need help, he'll help you out.
+Hungry Beggar, A man without a home sitting on the street. 
+Beggar, A man without a home sitting on the street. 
