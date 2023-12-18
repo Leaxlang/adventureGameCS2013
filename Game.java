@@ -303,6 +303,7 @@ public class Game {
                     } else {
                         Art.GameOver();
                         System.out.println("\nYou have no idea on how to beat the demon so you died.");
+                        System.exit(0);
                     }
                     break;
                 default:
