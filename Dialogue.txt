@@ -1,8 +1,50 @@
-nodeBakery1 = Hello, how can I help you?
-nodeBakery2 = I don't know much, but I heard it's in the forest.
-nodeBakery3 = NO! When you go you'll die! Like many villagers already have!
-nodeBakery4 = There have been some cases where the children in the village disappeared. We believe that was the demon too!
-nodeBakery5 = The demon hides in the shadow's. You can't see him until it's already too late. 
-nodeBakery6 = Do you want to buy some bread now?
-nodeBakery7 = Here you go! Have a nice day and good luck on your quest!
-nodeBakery8 = Then why are you in a bakery??
+Bakery1;Bakery Lady: "Hello, how can I help you?";Can I have some bread?;Bakery7;Do you know anything about the demon?;Bakery2
+Bakery2;Bakery Lady: "I don't know much, but I heard it's in the forest.";Have you ever been there?;Bakery3
+Bakery3;Bakery Lady: "NO! When you go you'll die! Like many villagers already have!";Has he ever been to the village?;Bakery4
+Bakery4;Bakery Lady: "There have been some cases where the children in the village disappeared. We believe that was the demon too!";Has the demon ever been to the village?;Bakery5
+Bakery5;Bakery Lady: "The demon hides in the shadow's. You can't see him until it's already too late.";Thank you for your help;Bakery6
+Bakery6;Bakery Lady: "Do you want to buy some bread now?";Yes, please!;Bakery7;No I don't like bread;Bakery8
+Bakery7;Bakery Lady: "Here you go! Have a nice day and good luck on your quest!"
+Bakery8;Bakery Lady: "Then why are you in a bakery??"
+Guard1;Village Guard: "Hello traveler, Welcome to the Village of Eldoria.”;Hello;Guard2  
+Guard2;Village Guard: "Watch out for that beggar, he might look innocent but he's a rotten thief.";Why is consider a thief?;Guard3;Alright than I will keep a look out for him;Guard4 
+Guard3;Village Guard: "Well, a few years ago before known a beggar he was just a lad like you. He was ambitious to be an adventurer. However, he became a different man went off the horse, now lives a life of thievery.";That sounds horrible.;Guard4
+Guard4;Village Guard: "Well, if you're looking for a place to stay, head on over to The Bannered Mare, the tavern lady there will get you a room and plate to eat."; Could you tell me about this spell and shadows moving on their own? And who could be behind it?;Guard5  
+Guard5;Village Guard: "We aren’t allowed to speak about it as it is a rule set by the king himself. His court wizard is already on it. I suggest you stay away from this as its none of your business, so run along now.";Why aren’t you allowed to talk about it;Guard6
+Guard6;Village Guard: “Like I had already said, we aren’t allowed to share this information epically with outsiders such as yourself. Now beat it or I throw you in the pit.”;
+DrukenGuy1;Drunken Guy: "Hey pal, do you have any coins...to spear for my mead. It will be my...treat.";Why is your treat when I would be paying?;DrukenGuy2;Get off me I more pressing matters to attend too.;DrukenGuy3 
+DrunkenGuy2;Drunken Guy: "Don't get into specifics now it will ruin the fun of a good time drinking mead. What do you say?";No. Now step aside I have to go.;DrukenGuy3
+DrunkenGuy3;Drunken Guy: "Don’t tell me what to do boy, you better watch yourself......or end up like those who went missing"
+TavernLady1;Tavern Lady: "Are you okay there champ?;Hello there!;TavernLady2 
+TavernLady2;Tavern Lady: "Anything I can get you?"; I wanted to ask of you if you heard anything about these sayings of shadows moving on their own? And who could-";TavernLady3  
+TavernLady3;Tavern Lady: "Hush now...you cannot speak of this. I suggest you come inside where it is much safer to speak."; So, what do you know about this spell?;TavernLady4 
+TavernLady4;Tavern Lady: ‘One you have entered the Bannered Mare it was rather empty for a tavern’s inside with a few eating and others drinking to their hearts content'. 'You took a seat at the counter as the Tavern Lady directed you to do.’ \n "I could if, have the coin. Other than that, I cannot say but ‘Welcome to the Bannered Mare, how may I serve you today?’; You decided to pay the tavern lady for any information about the spell that was set onto the village.;TavernLady5;That’s alright I will just get a meal please, just why many of just stay within this after all these events?;TavernLady6 
+TavernLady5;Tavern Lady: "Ah so you do have the coin. The information I am about to give you could land you with people who aren’t very friendly. It wasn’t noticeable at first, but when dusk started to approach the shadows started to show no one really knew where they came from, just they abducted many people, many started to leave as it got worse, that’s why many homes looked as if they were ransacked.";Why did so many stays within the village then?;TavernLady6  
+TavernLady6;Tavern Lady: "As you can imagine, not many of us have somewhere to go, this is our home, and we would rather pass peacefully here than pass somewhere we couldn’t truly call home.";Sorry for your unfortunate circumstances, but I will get to the bottom of this and free your village. Any more information you have for me?;TavernLady7  
+TavernLady7;Tavern Lady: "That’s all the information I have for you traveler besides the ones who went mad but that is all I have. And thank you for your heroic attitude, not many are willing to face the danger that lies ahead. Well safe travels and this village will be in your gratitude."
+LittleGirl1;Little Girl: "There is so many scary people here, why hasn't my family moved out yet.";Excuse me, little girl.;LittleGirl2 
+LittleGirl2;Little Girl: "Who are you, I want my mommy. You are scary with that mask.";Uh...I am sorry about that but have you seen strange shadows?;LittleGirl4;Look at this, *you conjure fire from your hand*.;LittleGirl3 
+LittleGirl3;Little Girl: "Are you the one that did this to my home?";No. I am trying to find the person who cursed the village.;LittleGirl4 
+LittleGirl4;Little Girl: "Leave me alone...please, *starts to cry*
+OldWomen1;Old Women: "Hello young traveler, it seems you need some information regarding......shadows?"; Yes, tell me what you know please.;OldWomen2  
+OldWomen2;Old Women: "Well of course, the shadows you heard lurk within the shadows of that forest. Where the sun doesn’t shine and not even the animals of the forest dare to touch.";Thank you for this information.;OldWomen4;This doesn't seem as much information as I need!;OldWomen3 
+OldWomen3;Old Women: "What more do you need of me I already gave you enough as you need."
+OldWomen4;Old Women: "Careful dear, or you may not like what you find in there at all...may Talos watch over you."
+Wizard1; Welcome to the Wizard Tower! You are the Wizards apprentice and it's time for your next task; Start; Wizard2
+Wizard2; "Wizard: Good morning, the time has come for your next task! You will have to go to the village of Eldoria. They are haunted by a demon. Your task is to defeat the demon and to figure out how to defeat him. What are you waiting for? Let's go!";I'll go soon!;Wizard3;On my way!;Wizard4
+Wizard3; Wizard: "Then hurry, the longer you wait, the more people die!"
+Wizard4; Wizard: "Good Luck!"
+Beggar1; Beggar: "You have some food for an old men?";Yes, I can share this bread with you; Beggar2; No, I'm sorry;Beggar4
+Beggar2; Beggar: "Thank you very much! Tell me what are you doing here in Eldoria?";I'm looking for hints to kill the demon.;Beggar3; Doesn't matter to you;HungryBeggar4
+Beggar3; Beggar: "Oh, I can give you a hint!" He whispers something in your ear. Now you know how to beat the demon!
+Beggar4; Beggar: "Well have a nice day anyways!"
+HungryBeggar1; Beggar: "You have some food for an old man?";No I don't have anything;HungryBeggar2; No, work for your food; HungryBeggar3
+HungryBeggar2; Beggar: "Well have a nice day!"
+HungryBeggar3; Beggar: "You think I'm choosing to live on the street?"
+HungryBeggar4; Beggar: "Well, thank you for the food. I think you should go tho."
+HelpWizard1; Wizard: "You are back already? Are you done with your quest?";Yes, I am!; HelpWizard2;No, I'll get back to it right now!; HelpWizard5; No, I need help; HelpWizard6
+HelpWizard2; Wizard: "What a LIAR you are! Go bakc to your quest immeadeatly or you can forget your apprenticeship!";okay...;HelpWizard3; No thank you :/; HelpWizard4
+HelpWizard3; Wizard: "Now go!"
+HelpWizard4; Wizard: "THIS IS IT, DON'T EVER COME BACK!"
+HelpWizard5; Wizard: "Hurry! People are dying!"
+HelpWizard6; Wizard: "Always remember be kind and help other people!

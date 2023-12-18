@@ -22,20 +22,3 @@ public class DialogueTree {
         return rootNode;
     }
 }
-
-
-// public class DialogueTree {
-//     private DialogueNode rootNode;
- 
-//     public DialogueTree(DialogueNode rootNode) {
-//         this.rootNode = rootNode;
-//     }
-
-//     public DialogueNode getRootNode(String responseName) {
-//         return rootNode;
-//     }
- 
-//     public DialogueNode getNextNode(String responseName) {
-//         return rootNode.getResponse(responseName);
-//     }
-//  }

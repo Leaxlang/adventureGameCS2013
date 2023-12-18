@@ -37,6 +37,10 @@ public class Character {
  public DialogueNode getNextNode(String choice) {
         return dialogueTree.continueTree(choice);
     }
+    public DialogueNode getDialogue() {
+        return dialogueTree.getCurrentNode();
+     }
+     
  
 //      public DialogueNode interact(String choice) {
 //        return dialogueTree.getNextNode(choice);
