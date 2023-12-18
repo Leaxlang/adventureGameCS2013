@@ -106,10 +106,7 @@ public class Game {
         handlePlayerInteraction(character, playerResponse, currentNode);
     }
 
-    public static void main(String[] args) {
-        // Create an instance of the Game class
-        Game game = new Game();
-     
+    public static void main(String[] args) {     
         // Game loop
         while (true) {
             // Call the init method to initialize the game
