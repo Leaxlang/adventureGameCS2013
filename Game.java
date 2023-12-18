@@ -155,7 +155,6 @@ public class Game {
                 String[] parts = line.split(";");
 
           String name = parts[0].trim();
-                String dialogue = parts[1].trim();
 
                 DialogueNode dialogueNode = game.dialogueMap.get(name);
                 if (parts.length >2) {

@@ -34,7 +34,7 @@ public class Art {
     "                 `-._,-'   `-._______,-'   `-._,-'                 \n ");
     }
 
-    public void Win(){
+    public static void Win(){
         System.out.println(
     "                                                                                ,_,    \n" +
     "                                                                               (.,.)   \n" +
